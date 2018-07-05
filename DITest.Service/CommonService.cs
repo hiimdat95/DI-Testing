@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DITest.Common;
+﻿using DITest.Common;
 using DITest.Data.Infrastructure;
 using DITest.Data.Repositories;
 using DITest.Model.Models;
+using System.Collections.Generic;
 
 namespace DITest.Service
 {
     public interface ICommonService
     {
         Footer GetFooter();
+
         IEnumerable<Slide> GetSlides();
+
         SystemConfig GetSystemConfig(string code);
     }
+
     public class CommonService : ICommonService
     {
-        IFooterRepository _footerRepository;
-        ISystemConfigRepository _systemConfigRepository;
-        IUnitOfWork _unitOfWork;
-        ISlideRepository _slideRepository;
-        public CommonService(IFooterRepository footerRepository,ISystemConfigRepository systemConfigRepository,IUnitOfWork unitOfWork,ISlideRepository slideRepository)
+        private IFooterRepository _footerRepository;
+        private ISystemConfigRepository _systemConfigRepository;
+        private IUnitOfWork _unitOfWork;
+        private ISlideRepository _slideRepository;
+
+        public CommonService(IFooterRepository footerRepository, ISystemConfigRepository systemConfigRepository, IUnitOfWork unitOfWork, ISlideRepository slideRepository)
         {
             _footerRepository = footerRepository;
             _unitOfWork = unitOfWork;
@@ -37,7 +37,7 @@ namespace DITest.Service
 
         public IEnumerable<Slide> GetSlides()
         {
-            return _slideRepository.GetMulti(x=>x.Status);
+            return _slideRepository.GetMulti(x => x.Status);
         }
 
         public SystemConfig GetSystemConfig(string code)

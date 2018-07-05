@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using DITest.Model.Abstract;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DITest.Model.Abstract;
 
 namespace DITest.Model.Models
 {
@@ -22,6 +22,7 @@ namespace DITest.Model.Models
 
         [MaxLength(500)]
         public string Description { set; get; }
+
         public int? ParentID { set; get; }
         public int? DisplayOrder { set; get; }
 

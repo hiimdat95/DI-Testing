@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using DITest.Data.Infrastructure;
+﻿using DITest.Data.Infrastructure;
 using DITest.Data.Repositories;
 using DITest.Model.Models;
+using System.Collections.Generic;
 
 namespace DITest.Service
 {
@@ -41,7 +40,7 @@ namespace DITest.Service
 
         public PostCategory Delete(int id)
         {
-           return _postCategoryRepository.Delete(id);
+            return _postCategoryRepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()

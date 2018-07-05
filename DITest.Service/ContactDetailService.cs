@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DITest.Data.Infrastructure;
+﻿using DITest.Data.Infrastructure;
 using DITest.Data.Repositories;
 using DITest.Model.Models;
 
@@ -13,10 +8,11 @@ namespace DITest.Service
     {
         ContactDetail GetDefaultContact();
     }
+
     public class ContactDetailService : IContactDetailService
     {
-        IContactDetailRepository _contactDetailRepository;
-        IUnitOfWork _unitOfWork;
+        private IContactDetailRepository _contactDetailRepository;
+        private IUnitOfWork _unitOfWork;
 
         public ContactDetailService(IContactDetailRepository contactDetailRepository, IUnitOfWork unitOfWork)
         {

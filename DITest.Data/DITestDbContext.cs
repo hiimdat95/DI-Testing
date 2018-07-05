@@ -1,20 +1,16 @@
 ﻿using DITest.Model.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.Data
 {
-    public class DITestDbContext :DbContext
+    public class DITestDbContext : DbContext
     {
         public DITestDbContext() : base("DITestConnection")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
+
         public DbSet<AppUser> AppUsers { set; get; }
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Menu> Menus { set; get; }
@@ -35,14 +31,11 @@ namespace DITest.Data
 
         public DbSet<Tag> Tags { set; get; }
 
-
-
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
         public DbSet<ContactDetail> ContactDetails { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
 
-        
         public static DITestDbContext Create()
         {
             return new DITestDbContext();
@@ -52,7 +45,6 @@ namespace DITest.Data
         {
             base.OnModelCreating(builder);
             builder.Conventions.Remove<PluralizingTableNameConvention>();
-
         }
     }
 }

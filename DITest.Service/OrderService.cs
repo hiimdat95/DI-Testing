@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DITest.Common.ViewModels;
-using DITest.Data.Infrastructure;
+﻿using DITest.Data.Infrastructure;
 using DITest.Data.Repositories;
 using DITest.Model.Models;
+using System;
+using System.Collections.Generic;
 
 namespace DITest.Service
 {
     public interface IOrderService
     {
         Order Create(ref Order order, List<OrderDetail> orderDetails);
+
         void UpdateStatus(int orderId);
+
         void Save();
     }
+
     public class OrderService : IOrderService
     {
-        IOrderRepository _orderRepository;
-        IOrderDetailRepository _orderDetailRepository;
-        IUnitOfWork _unitOfWork;
+        private IOrderRepository _orderRepository;
+        private IOrderDetailRepository _orderDetailRepository;
+        private IUnitOfWork _unitOfWork;
 
         public OrderService(IOrderRepository orderRepository, IOrderDetailRepository orderDetailRepository, IUnitOfWork unitOfWork)
         {
@@ -28,6 +27,7 @@ namespace DITest.Service
             this._orderDetailRepository = orderDetailRepository;
             this._unitOfWork = unitOfWork;
         }
+
         public Order Create(ref Order order, List<OrderDetail> orderDetails)
         {
             try

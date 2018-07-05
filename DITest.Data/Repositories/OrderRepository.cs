@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using DITest.Common.ViewModels;
+﻿using DITest.Common.ViewModels;
 using DITest.Data.Infrastructure;
 using DITest.Model.Models;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace DITest.Data.Repositories
 {

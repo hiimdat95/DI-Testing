@@ -1,14 +1,11 @@
-﻿using System.Collections;
+﻿using DITest.Model.Abstract;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
-using DITest.Model.Abstract;
 
 namespace DITest.Model.Models
 {
     [Table("Products")]
-    
     public class Product : Auditable
     {
         [Key]
@@ -40,6 +37,7 @@ namespace DITest.Model.Models
 
         [MaxLength(500)]
         public string Description { set; get; }
+
         public string Content { set; get; }
 
         public bool? HomeFlag { set; get; }

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace DITest.Common
 {
@@ -35,6 +33,7 @@ namespace DITest.Common
             }
             return str2;
         }
+
         /// <summary>
         /// Replace HTML template with values
         /// </summary>

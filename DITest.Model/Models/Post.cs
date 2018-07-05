@@ -1,8 +1,7 @@
-﻿using System.Collections;
+﻿using DITest.Model.Abstract;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DITest.Model.Abstract;
 
 namespace DITest.Model.Models
 {

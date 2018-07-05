@@ -5,7 +5,7 @@ using DITest.Data.Infrastructure;
 using DITest.Model.Models;
 using System.Linq;
 
-namespace TeduShop.Data.Repositories
+namespace DITest.Data.Repositories
 {
     public interface IPostRepository : IRepository<Post>
     {

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DITest.Data.Infrastructure;
+﻿using DITest.Data.Infrastructure;
 using DITest.Model.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DITest.Data.Repositories
 {

@@ -3,7 +3,7 @@ using DITest.Model.Models;
 
 namespace DITest.Data.Repositories
 {
-    public interface IOrderDetailRepository :  IRepository<OrderDetail>
+    public interface IOrderDetailRepository : IRepository<OrderDetail>
     {
     }
 

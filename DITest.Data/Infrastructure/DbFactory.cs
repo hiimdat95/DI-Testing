@@ -1,12 +1,9 @@
-﻿
-
-namespace DITest.Data.Infrastructure
+﻿namespace DITest.Data.Infrastructure
 {
-    public class DbFactory :Disposable, IDbFactory
+    public class DbFactory : Disposable, IDbFactory
     {
-       
         private DITestDbContext dbContext;
-       
+
         public DITestDbContext Init()
         {
             return dbContext ?? (dbContext = new DITestDbContext());

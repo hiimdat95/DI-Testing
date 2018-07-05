@@ -47,13 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonService.cs" />
+    <Compile Include="ContactDetailService.cs" />
+    <Compile Include="ErrorService.cs" />
+    <Compile Include="FeedbackService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="PageService.cs" />
+    <Compile Include="PostCategoryService.cs" />
+    <Compile Include="PostService.cs" />
+    <Compile Include="ProductCategoryService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DITest.Common\DITest.Common.csproj">
+      <Project>{9dc4fe6d-c21e-4eab-9076-e46e308f4e23}</Project>
+      <Name>DITest.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DITest.Data\DITest.Data.csproj">
       <Project>{6f0a775c-031b-44af-9c8c-98df9ca28ea1}</Project>
       <Name>DITest.Data</Name>

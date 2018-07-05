@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DITest.Data.Infrastructure;
+﻿using DITest.Data.Infrastructure;
 using DITest.Model.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DITest.Data.Repositories
-{ 
+{
     public interface IProductRepository : IRepository<Product>
     {
         IEnumerable<Product> GetListProductByTag(string tagId, int page, int pageSize, out int totalRow);
@@ -27,7 +25,7 @@ namespace DITest.Data.Repositories
                         select p;
             totalRow = query.Count();
 
-            return query.OrderByDescending(x=>x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize);
+            return query.OrderByDescending(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize);
         }
     }
 }

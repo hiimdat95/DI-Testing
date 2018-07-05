@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.Data.Infrastructure
 {
-    public class Disposable: IDisposable
+    public class Disposable : IDisposable
     {
         private bool isDisposed;
 
@@ -20,6 +16,7 @@ namespace DITest.Data.Infrastructure
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
         private void Dispose(bool disposing)
         {
             if (!isDisposed && disposing)

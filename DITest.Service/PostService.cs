@@ -29,12 +29,12 @@ namespace DITest.Service
     public class PostService : IPostService
     {
         private IPostRepository _postRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public PostService(IPostRepository postRepository, IUnitOfWork unitOfWork)
         {
             this._postRepository = postRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public void Add(Post post)
@@ -75,7 +75,7 @@ namespace DITest.Service
 
         public void SaveChanges()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
 
         public void Update(Post post)

@@ -14,12 +14,12 @@ namespace DITest.Service
     public class FeedbackService : IFeedbackService
     {
         private IFeedbackRepository _feedbackRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public FeedbackService(IFeedbackRepository feedbackRepository, IUnitOfWork unitOfWork)
         {
             _feedbackRepository = feedbackRepository;
-            _unitOfWork = unitOfWork;
+            unitOfWork = unitOfWork;
         }
 
         public Feedback Create(Feedback feedback)
@@ -29,7 +29,7 @@ namespace DITest.Service
 
         public void Save()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
     }
 }

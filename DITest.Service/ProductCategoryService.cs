@@ -7,9 +7,9 @@ namespace DITest.Service
 {
     public interface IProductCategoryService
     {
-        ProductCategory Add(ProductCategory ProductCategory);
+        ProductCategory Add(ProductCategory productCategory);
 
-        void Update(ProductCategory ProductCategory);
+        void Update(ProductCategory productCategory);
 
         ProductCategory Delete(int id);
 
@@ -26,56 +26,56 @@ namespace DITest.Service
 
     public class ProductCategoryService : IProductCategoryService
     {
-        private IProductCategoryRepository _ProductCategoryRepository;
-        private IUnitOfWork _unitOfWork;
+        private IProductCategoryRepository productCategoryRepository;
+        private IUnitOfWork unitOfWork;
 
-        public ProductCategoryService(IProductCategoryRepository ProductCategoryRepository, IUnitOfWork unitOfWork)
+        public ProductCategoryService(IProductCategoryRepository productCategoryRepository, IUnitOfWork unitOfWork)
         {
-            this._ProductCategoryRepository = ProductCategoryRepository;
-            this._unitOfWork = unitOfWork;
+            this.productCategoryRepository = productCategoryRepository;
+            this.unitOfWork = unitOfWork;
         }
 
         public ProductCategory Add(ProductCategory ProductCategory)
         {
-            return _ProductCategoryRepository.Add(ProductCategory);
+            return productCategoryRepository.Add(ProductCategory);
         }
 
         public ProductCategory Delete(int id)
         {
-            return _ProductCategoryRepository.Delete(id);
+            return productCategoryRepository.Delete(id);
         }
 
         public IEnumerable<ProductCategory> GetAll()
         {
-            return _ProductCategoryRepository.GetAll();
+            return productCategoryRepository.GetAll();
         }
 
         public IEnumerable<ProductCategory> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
-                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+                return productCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
             else
-                return _ProductCategoryRepository.GetAll();
+                return productCategoryRepository.GetAll();
         }
 
         public IEnumerable<ProductCategory> GetAllByParentId(int parentId)
         {
-            return _ProductCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);
+            return productCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);
         }
 
         public ProductCategory GetById(int id)
         {
-            return _ProductCategoryRepository.GetSingleById(id);
+            return productCategoryRepository.GetSingleById(id);
         }
 
         public void Save()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
 
         public void Update(ProductCategory ProductCategory)
         {
-            _ProductCategoryRepository.Update(ProductCategory);
+            productCategoryRepository.Update(ProductCategory);
         }
     }
 }

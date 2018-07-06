@@ -12,12 +12,12 @@ namespace DITest.Service
     public class ContactDetailService : IContactDetailService
     {
         private IContactDetailRepository _contactDetailRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public ContactDetailService(IContactDetailRepository contactDetailRepository, IUnitOfWork unitOfWork)
         {
             this._contactDetailRepository = contactDetailRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public ContactDetail GetDefaultContact()

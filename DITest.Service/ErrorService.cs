@@ -14,12 +14,12 @@ namespace DITest.Service
     public class ErrorService : IErrorService
     {
         private IErrorRepository _errorRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public ErrorService(IErrorRepository errorRepository, IUnitOfWork unitOfWork)
         {
             this._errorRepository = errorRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public Error Create(Error error)
@@ -29,7 +29,7 @@ namespace DITest.Service
 
         public void Save()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
     }
 }

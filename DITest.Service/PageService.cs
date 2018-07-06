@@ -12,12 +12,12 @@ namespace DITest.Service
     public class PageService : IPageService
     {
         private IPageRepository _pageRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public PageService(IPageRepository pageRepository, IUnitOfWork unitOfWork)
         {
             this._pageRepository = pageRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public Page GetByAlias(string alias)

@@ -19,13 +19,13 @@ namespace DITest.Service
     {
         private IFooterRepository _footerRepository;
         private ISystemConfigRepository _systemConfigRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
         private ISlideRepository _slideRepository;
 
         public CommonService(IFooterRepository footerRepository, ISystemConfigRepository systemConfigRepository, IUnitOfWork unitOfWork, ISlideRepository slideRepository)
         {
             _footerRepository = footerRepository;
-            _unitOfWork = unitOfWork;
+            unitOfWork = unitOfWork;
             _systemConfigRepository = systemConfigRepository;
             _slideRepository = slideRepository;
         }

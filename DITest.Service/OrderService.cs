@@ -19,13 +19,13 @@ namespace DITest.Service
     {
         private IOrderRepository _orderRepository;
         private IOrderDetailRepository _orderDetailRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public OrderService(IOrderRepository orderRepository, IOrderDetailRepository orderDetailRepository, IUnitOfWork unitOfWork)
         {
             this._orderRepository = orderRepository;
             this._orderDetailRepository = orderDetailRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public Order Create(ref Order order, List<OrderDetail> orderDetails)
@@ -33,7 +33,7 @@ namespace DITest.Service
             try
             {
                 _orderRepository.Add(order);
-                _unitOfWork.Commit();
+                unitOfWork.Commit();
 
                 foreach (var orderDetail in orderDetails)
                 {
@@ -57,7 +57,7 @@ namespace DITest.Service
 
         public void Save()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
     }
 }

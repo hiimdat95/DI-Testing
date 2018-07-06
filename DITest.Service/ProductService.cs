@@ -54,7 +54,7 @@ namespace DITest.Service
         private ITagRepository _tagRepository;
         private IProductTagRepository _productTagRepository;
 
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository,
             ITagRepository _tagRepository, IUnitOfWork unitOfWork)
@@ -62,13 +62,13 @@ namespace DITest.Service
             this._productRepository = productRepository;
             this._productTagRepository = productTagRepository;
             this._tagRepository = _tagRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public Product Add(Product Product)
         {
             var product = _productRepository.Add(Product);
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
             if (!string.IsNullOrEmpty(Product.Tags))
             {
                 string[] tags = Product.Tags.Split(',');
@@ -118,7 +118,7 @@ namespace DITest.Service
 
         public void Save()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
 
         public void Update(Product Product)

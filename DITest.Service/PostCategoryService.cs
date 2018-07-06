@@ -25,12 +25,12 @@ namespace DITest.Service
     public class PostCategoryService : IPostCategoryService
     {
         private IPostCategoryRepository _postCategoryRepository;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork unitOfWork;
 
         public PostCategoryService(IPostCategoryRepository postCategoryRepository, IUnitOfWork unitOfWork)
         {
             this._postCategoryRepository = postCategoryRepository;
-            this._unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public PostCategory Add(PostCategory postCategory)
@@ -60,7 +60,7 @@ namespace DITest.Service
 
         public void Save()
         {
-            _unitOfWork.Commit();
+            unitOfWork.Commit();
         }
 
         public void Update(PostCategory postCategory)

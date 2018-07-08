@@ -5,7 +5,7 @@
         private readonly IDbFactory dbFactory;
         private DITestDbContext dbContext;
 
-        private UnitOfWork(IDbFactory dbFactory)
+        public UnitOfWork(IDbFactory dbFactory)
         {
             this.dbFactory = dbFactory; ;
         }

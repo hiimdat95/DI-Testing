@@ -8,6 +8,7 @@ namespace DITest.Data
     {
         public DITestDbContext() : base("DITestConnection")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DITestDbContext, DITest.Data.Migrations.Configuration>());
             this.Configuration.LazyLoadingEnabled = false;
         }
 
@@ -41,10 +42,9 @@ namespace DITest.Data
             return new DITestDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder builder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            builder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Presentation
        
         private void LoadProductCategory()
         {
-            var data = _commonService.GetListSystemConfig();
+            var data = _productCategoryService.GetAll();
             gridControl1.DataSource = data;
         }
 
